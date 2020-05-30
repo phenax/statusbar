@@ -3,7 +3,7 @@ source $ROOT/helpers.sh;
 
 # Workspaces for bspwm
 bspwm_module() {
-  local selected_ws=$(bspc query -D -d --names);
+  local selected_ws=$(wmctrl -d | awk '$2 == "*" {print $1 + 1}' | head -n 1);
 
   get_ws_list() {
     echo "$selected_ws";
