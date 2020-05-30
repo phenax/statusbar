@@ -36,3 +36,16 @@ brightness_module() {
 volume_module() {
   echo "$(icon volume) $(volume_component 2)"
 }
+
+
+module() {
+  local module=$1;
+  local contents="";
+  local cache_file="$MODULE_CACHE_FILE/$module";
+  if [[ -f $cache_file ]]; then
+    cat $cache_file;
+  else
+    contents=$(${module}_module);
+    echo -e $contents > $cache_file;
+  fi;
+}

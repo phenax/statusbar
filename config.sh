@@ -1,5 +1,5 @@
-source $ROOT/helpers.sh;
 source $ROOT/modules.sh;
+source $ROOT/helpers.sh;
 
 NAME=monkeybar;
 POSITION=top;
@@ -12,13 +12,13 @@ ALPHA="dd";
 SEPERATOR=" :: ";
 
 get_left_bar() {
-  echo "$(bspwm_module)";
+  echo "$(module bspwm)";
 }
 
 get_center_bar() {
-  echo "$(music_module)";
+  echo "$(module music)";
 }
 
 get_right_bar() {
-  echo "$(volume_module)$(sep)$(brightness_module)$(sep)$(date_module)$(sep)$(battery_module)";
+  echo "$(module volume)$(sep)$(module brightness)$(sep)$(module date)$(sep)$(module battery)";
 }
