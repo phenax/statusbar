@@ -29,8 +29,8 @@ start_bar() {
 case "$1" in
   show)
     reset_bar 2> /dev/null;
-    start_bar &
-    echo -e $! >> $TMP_PID_FILE;
+    start_bar 2> /dev/null &
+    echo -e $! > $TMP_PID_FILE;
     disown;
   ;;
   hide) reset_bar 2> /dev/null; ;;
