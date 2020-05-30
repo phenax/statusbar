@@ -26,7 +26,7 @@ battery_module() {
 }
 
 music_module() {
-  echo "$(icon music) $(playerctl metadata --format '{{title}} - {{artist}}')"
+  echo "$(icon music)  $(playerctl metadata --format '{{title}} - {{artist}}')"
 }
 
 brightness_module() {
